@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Tilt Neon', cursive;
+    color: #f2f2f2;
+}
+
+
+/*movil*/
+.grid-container{
+    display: grid;
+    grid-template-areas:
+    'header'
+    'ordenar'
+    'main'
+    'pags'
+    'footer';
+}
+.header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    font-size: x-large;
+    padding: 1rem 1rem;
+    background-color: #262626;
+}
+.logo{
+    display: flex;
+    width: max-content;
+}
+
+/*novisiblemovil*/
+.menuweb{
+    display: none;
+}
+
+.ordenar{
+    grid-area: ordenar;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #737373;
+    padding: 0.5rem 0rem;
+}
+.ordenar h3{
+    padding-bottom: 0.5rem;
+}
+.ordenar select, option{
+    width: 90%;
+    color: purple;
+    border: purple 1px solid;
+    border-radius: 4px;
+    background-color: white;
+    padding: 0.3rem;
+}
+.main{
+    grid-area: main;
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0D0D0D;
+    padding: 1rem 0rem; 
+    overflow: auto;
+}
+
+/*card*/
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(133, 16, 162, 0.2), 0 6px 20px 0 rgba(197, 167, 228, 0.5); 
+    width: 90%;
+    border-radius: 20px;
+
+}
+.card img{
+    width: 100%;
+    margin: 1rem 0rem;
+}
+.card p{
+    margin: 0.5rem 0rem;
+    padding: 0.5rem;
+    color: purple;
+    font-weight: bolder;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(133, 16, 162, 0.2), 0 6px 20px 0 rgba(197, 167, 228, 0.5); 
+
+}
+.card button{
+    margin: 1rem 0rem;
+    background-color: purple;
+    color: white;
+    font-weight: lighter;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+/*pags*/
+.pags{
+    grid-area: pags;
+    background-color: #0D0D0D;
+
+}
+.pags a{
+    color: purple;
+    background-color: white;
+    border: solid 1px purple;
+    font-weight: bolder;
+}
+
+.pags-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+
+
+/*footer*/
+.footer{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color:#737373;
+    color: #262626;
+}
+
+/*ordenador*/
+@media (min-width: 576px){
+    .grid-container{
+        grid-template-areas:
+        'header ordenar'
+        'header main'
+        'footer main'
+        'footer pags';
+        grid-template-rows: 0.5fr 8fr 0.5fr 0.5fr;
+        grid-template-columns: 2fr 8fr;
+
+    }
+    .menuweb{
+        display: block;
+        padding: 1rem 0rem;   
+    }
+    .menuweb ul{
+        list-style: none;
+        padding: 1rem;
+     }
+    .menuweb li a{
+        text-decoration: none;
+        color: white;
+    }
+    .menuweb li a:hover{
+        color: purple;
+    }
+
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        
+    }
+    .menumovil{
+        display: none
+    }
+    .main{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        padding: 1rem 1rem;
+    }
+    .card{
+        width: 100%;
+        background-color: #0D0D0D;
+    }
+    .pags{
+        grid-area: pags;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #262626;
+    }
+    .footer{
+        justify-content: center;
+        text-align: center;
+    }
+}
